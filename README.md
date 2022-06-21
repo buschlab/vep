@@ -1,5 +1,5 @@
 # Containerized Variant Effect Predictor (VEP) + Cache
-[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?hashtags=Ensembl,VEP,Singularity,Docker&url=https://github.com/matmu/vep)
+[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?hashtags=Ensembl,VEP,Singularity,Docker&url=https://github.com/buschlab/vep)
 
 &nbsp;+ [Introduction](#Introduction) \
 &nbsp;+ [Building image with Singularity](#Building-image-with-Singularity) \
@@ -15,7 +15,10 @@
 
 
 ## Introduction
-This documentation describes the usage of the Docker image at https://hub.docker.com/r/matmu/vep which contains the bioinformatics tool **Ensembl Variant effect predictor (VEP)** for annotating genetic variants. The image comes with
+
+This repository was forked from https://github.com/matmu/vep, who established the workflow. Old releases (prior v106.1 are provided by https://github.com/matmu/vep). Future releases will be publish on https://github.com/buschlab/vep.
+
+This documentation describes the usage of the Docker image at https://hub.docker.com/r/buschlab/vep which contains the bioinformatics tool **Ensembl Variant effect predictor (VEP)** for annotating genetic variants. The image comes with
 
 * Merged cache including RefSeq and Ensembl transcripts (VEP parameter --merged required)
 * Reference genome and index
@@ -24,6 +27,9 @@ This documentation describes the usage of the Docker image at https://hub.docker
 
 ## Available versions
 **Human**
+
+[![106.1-GRCh38](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCh38.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.105-GRCh38.yml) 
+[![106.1-GRCh37](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCh37.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.105-GRCh37.yml)
 
 [![105-GRCh38](https://github.com/matmu/vep/actions/workflows/docker.105-GRCh38.yml/badge.svg)](https://github.com/matmu/vep/actions/workflows/docker.105-GRCh38.yml) 
 [![105-GRCh37](https://github.com/matmu/vep/actions/workflows/docker.105-GRCh37.yml/badge.svg)](https://github.com/matmu/vep/actions/workflows/docker.105-GRCh37.yml) \
@@ -39,6 +45,8 @@ This documentation describes the usage of the Docker image at https://hub.docker
 
 **Mouse**
 
+[![106.1-GRCm39](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCm39.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCm39.yml) 
+
 [![105-GRCm39](https://github.com/matmu/vep/actions/workflows/docker.105-GRCm39.yml/badge.svg)](https://github.com/matmu/vep/actions/workflows/docker.105-GRCm39.yml) \
 [![103-GRCm39](https://github.com/matmu/vep/actions/workflows/docker.103-GRCm39.yml/badge.svg)](https://github.com/matmu/vep/actions/workflows/docker.103-GRCm39.yml) \
 ![101-GRCm38](https://github.com/matmu/vep/workflows/101-GRCm38/badge.svg) \
@@ -47,14 +55,14 @@ This documentation describes the usage of the Docker image at https://hub.docker
 
 The term `merged` refers to the merged Ensembl/RefSeq cache. To be consistent with the Ensembl website, chose Ensembl cache only (i.e. without the term `merged`). Examples for available versions are **99-GRCh38** (VEP 99 with Ensembl cache for reference GRCh38) or **99-GRh37-merged** (VEP 99 with Ensembl/Refseq cache for reference GRCh37).
 
-You can also visit https://hub.docker.com/r/matmu/vep/tags to get a list of available versions.
+You can also visit https://hub.docker.com/r/matmu/vep/tags to get a list of available versions (prior v106.1) and https://hub.docker.com/r/buschlab/vep/tags for newer versions.
 
 **Note:** If you require a container for a species not mentioned above, feel free to contact us or even better, create an issue.
 
 
 ## Build image with Singularity
 ```bash
-singularity build vep.<version>.simg docker://matmu/vep:<version>
+singularity build vep.<version>.simg docker://buschlab/vep:<version>
 ```
 
 `<version>` is a tag representing the Ensembl version and the species + version of the reference genome. 
@@ -146,5 +154,5 @@ docker run -v /path/to/dir:/opt/data matmu/vep:<version> vep [options]
 
 
 ## Acknowledgments
-This document has been created by **Julia Remes** & **Matthias Munz**, **University of Lübeck**, **Germany**.
+This document has been created by **Julia Remes** & **Matthias Munz**, **University of Lübeck**, **Germany** and was updated by **Axel Künstner**, member of **Medical Systems Biology** (**University of Lübeck**, **Germany**).
 
