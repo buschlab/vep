@@ -154,5 +154,5 @@ docker run -v /path/to/dir:/opt/data matmu/vep:<version> vep [options]
 
 
 ## Acknowledgments
-This document has been created by **Julia Remes** & **Matthias Munz**, **University of Lübeck**, **Germany** and was updated by **Axel Künstner**, member of **Medical Systems Biology** (**University of Lübeck**, **Germany**).
+This document has been created by **Julia Remes** & **Matthias Munz**, **University of Lübeck**, **Germany** and was updated by **Axel Künstner**, member of **Medical Systems Biology Group** (**University of Lübeck**, **Germany**).
 
