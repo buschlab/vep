@@ -16,7 +16,7 @@
 
 ## Introduction
 
-This repository was forked from https://github.com/matmu/vep, who established the workflow. Old releases (prior v106.1 are provided by https://github.com/matmu/vep). Future releases will be publish on https://github.com/buschlab/vep.
+This repository was forked from https://github.com/matmu/vep, who established the workflow. Old releases (prior v106.1) are provided by https://github.com/matmu/vep. Future releases will be publish on https://github.com/buschlab/vep.
 
 This documentation describes the usage of the Docker image at https://hub.docker.com/r/buschlab/vep which contains the bioinformatics tool **Ensembl Variant effect predictor (VEP)** for annotating genetic variants. The image comes with
 
