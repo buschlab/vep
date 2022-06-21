@@ -36,11 +36,9 @@ This documentation describes the usage of the Docker image at https://hub.docker
 
 [![106.1-GRCm39](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCm39.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCm39.yml) 
 
-The term `merged` refers to the merged Ensembl/RefSeq cache. To be consistent with the Ensembl website, chose Ensembl cache only (i.e. without the term `merged`). Examples for available versions are **99-GRCh38** (VEP 99 with Ensembl cache for reference GRCh38) or **99-GRh37-merged** (VEP 99 with Ensembl/Refseq cache for reference GRCh37).
+You can also visit https://hub.docker.com/r/matmu/vep/tags to get a list of available versions (prior v106.1) and https://hub.docker.com/r/buschlab/vep/tags for newer releases.
 
-You can also visit https://hub.docker.com/r/matmu/vep/tags to get a list of available versions (prior v106.1) and https://hub.docker.com/r/buschlab/vep/tags for newer versions.
-
-**Note:** If you require a container for a species not mentioned above, feel free to contact us or even better, create an issue.
+**Note:** If you require a container for a species not mentioned above, feel free to contact us or create an issue.
 
 
 ## Build image with Singularity
@@ -56,7 +54,7 @@ To run VEP execute
 ```bash
 singularity exec vep.<version>.simg vep [options]
 ```
-whereby `<version>` is replaced by a respective version (see above), e.g. `99-CRCh38`. It is essential to add the VEP option `--merged` when using an image with merged Ensembl/Refseq cache. For species except homo sapiens, also the parameter `--species` (e.g. `--species mus_musculus`), has to be set as well.
+whereby `<version>` is replaced by a respective version (see above), e.g. `106-CRCh38`. It is essential to add the VEP option `--merged` when using an image with merged Ensembl/Refseq cache. For species except homo sapiens, also the parameter `--species` (e.g. `--species mus_musculus`), has to be set as well.
 
 
 ### More options
@@ -69,26 +67,26 @@ Visit http://www.ensembl.org/info/docs/tools/vep/script/vep_options.html for det
 
 #### Minimum (output format: compressed tab delimited)
 ```bash
-singularity exec vep.100-GRCh38-merged.simg vep --dir /opt/vep/.vep --merged --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip
+singularity exec vep.106-GRCh38-merged.simg vep --dir /opt/vep/.vep --merged --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip
 ```
 
 ```bash
-singularity exec vep.100-GRCh38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip
+singularity exec vep.106-GRCh38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip
 ```
 
 ```bash
-singularity exec vep.100-GRCm38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip -species mus_musculus
+singularity exec vep.106-GRCm38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip -species mus_musculus
 ```
 
 
 #### Minimum (output format: compressed vcf)
 ```bash
-singularity exec vep.100-GRCh38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.vcf.gz --vcf --compress_output bgzip
+singularity exec vep.106-GRCh38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.vcf.gz --vcf --compress_output bgzip
 ```
 
 #### Full annotation
 ```bash
-singularity exec vep.100-GRCh38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.vcf.gz --vcf --compress_output bgzip --everything --nearest symbol        
+singularity exec vep.106-GRCh38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.vcf.gz --vcf --compress_output bgzip --everything --nearest symbol        
 ```
 
 ## Post-processing
@@ -120,7 +118,7 @@ singularity exec vep.<version>.simg filter_vep --input_file <filename>.vcf --out
 VEP allows several other annotations sources (aka Plugins). Their respective Perl modules are included in the image, the annotation files have to be added seperately, however. The list of plugins as well as instructions on how to download and pre-process the annotation files can be found at: http://www.ensembl.org/info/docs/tools/vep/script/vep_plugins.html.
 
 ```bash
-singularity exec vep.100-GRCh38-merged.simg vep --dir /opt/vep/.vep --merged --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip --plugin CADD,/path/to/ALL.TOPMed_freeze5_hg38_dbSNP.tsv.gz
+singularity exec vep.106-GRCh38-merged.simg vep --dir /opt/vep/.vep --merged --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip --plugin CADD,/path/to/ALL.TOPMed_freeze5_hg38_dbSNP.tsv.gz
 ```
 
 
