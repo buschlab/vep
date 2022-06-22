@@ -75,7 +75,7 @@ singularity exec vep.106-GRCh38.simg vep --dir /opt/vep/.vep --offline --cache -
 ```
 
 ```bash
-singularity exec vep.106-GRCm38.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip -species mus_musculus
+singularity exec vep.106-GRCm39.simg vep --dir /opt/vep/.vep --offline --cache --input_file <filename>.vcf[.gz] --output_file <filename>.txt.gz --tab --compress_output bgzip -species mus_musculus
 ```
 
 
