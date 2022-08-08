@@ -1,4 +1,4 @@
-FROM ensemblorg/ensembl-vep:release_106.1
+FROM ensemblorg/ensembl-vep:release_102
 
 MAINTAINER Axel Künstner <axel.kuenstner@uni-luebeck.de>
 
