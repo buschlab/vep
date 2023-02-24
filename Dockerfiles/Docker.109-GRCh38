@@ -8,7 +8,7 @@ USER root
 RUN apt-get update && apt-get install -y samtools
 
 # Change user to vep
-# USER vep
+USER vep
 
 RUN perl INSTALL.pl \
         --AUTO fcp \
