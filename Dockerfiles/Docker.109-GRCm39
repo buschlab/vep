@@ -1,0 +1,27 @@
+FROM ensemblorg/ensembl-vep:release_109.3
+
+MAINTAINER Axel Künstner <axel.kuenstner@uni-luebeck.de>
+
+# Change user to root
+USER root
+
+RUN apt-get update && apt-get install -y samtools
+
+# Change user to vep
+USER vep
+
+RUN perl INSTALL.pl \
+        --AUTO fcp \
+        --NO_UPDATE \
+        --ASSEMBLY GRCm39 \
+        --PLUGINSDIR /opt/vep/.vep/Plugins/ \
+        --CACHEDIR /opt/vep/.vep/ \
+        --PLUGINS all \
+        --SPECIES mus_musculus && \
+    vep -id rs27096498 \
+      --species mus_musculus \
+      --cache \
+      --nearest symbol \
+      -o 'STDOUT' \
+      --no_stats \
+      > /dev/null
