@@ -38,6 +38,8 @@ This documentation describes the usage of the Docker image at https://hub.docker
 
 [![106.1-GRCm39](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCm39.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCm39.yml) 
 
+[![109-GRCm39](https://github.com/buschlab/vep/actions/workflows/docker.109-GRCm39.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.109-GRCm39.yml)
+
 You can also visit https://hub.docker.com/r/matmu/vep/tags to get a list of available versions (prior v106.1) and https://hub.docker.com/r/buschlab/vep/tags for newer releases.
 
 **Note:** If you require a container for a species not mentioned above, feel free to contact us or create an issue.
