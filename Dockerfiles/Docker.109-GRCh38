@@ -1,4 +1,4 @@
-FROM ensemblorg/ensembl-vep:latest
+FROM ensemblorg/ensembl-vep:release_109.3
 
 MAINTAINER Axel Künstner <axel.kuenstner@uni-luebeck.de>
 
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y samtools
 # Change user to vep
 USER vep
 
-RUN perl INSTALL.pl \
+RUN INSTALL.pl \
         --AUTO fcp \
         --NO_UPDATE \
         --ASSEMBLY GRCh38 \
