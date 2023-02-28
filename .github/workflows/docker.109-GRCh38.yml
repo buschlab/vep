@@ -32,10 +32,10 @@ jobs:
         df -h
     - name: Build and publish on Dockerhub
       uses: elgohr/Publish-Docker-Github-Action@v5
+      timeout-minutes: 720
       with:
         name: buschlab/vep
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASS }}
         dockerfile: Dockerfiles/Docker.109-GRCh38
         tags: "109-GRCh38"
-        timeout-minutes: 720
