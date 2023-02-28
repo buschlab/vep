@@ -5,6 +5,7 @@ on:
       - "Dockerfiles/Docker.109-GRCh38"
       - ".github/workflows/docker.109-GRCh38.yml"
 jobs:
+  timeout-minutes: 720
   build:
     runs-on: ubuntu-latest
     steps:
