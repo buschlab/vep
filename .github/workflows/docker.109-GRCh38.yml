@@ -32,7 +32,7 @@ jobs:
         df -h
     - name: Build and publish on Dockerhub
       uses: elgohr/Publish-Docker-Github-Action@v5
-      timeout-minutes: 720
+      timeout-minutes: 725
       with:
         name: buschlab/vep
         username: ${{ secrets.DOCKER_USER }}
