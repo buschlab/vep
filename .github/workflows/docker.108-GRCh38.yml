@@ -37,5 +37,5 @@ jobs:
         name: buschlab/vep
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASS }}
-        dockerfile: Dockerfiles/Docker.109-GRCh38
-        tags: "109-GRCh38"
+        dockerfile: Dockerfiles/Docker.108-GRCh38
+        tags: "108-GRCh38"
