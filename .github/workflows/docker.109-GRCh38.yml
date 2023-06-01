@@ -13,7 +13,7 @@ jobs:
     - name: Free disk space
       run: |
         df -h
-        dpkg-query -W --showformat='${Installed-Size}\t${Package}\t${Priority}\n' | sort -k1,1n
+        # dpkg-query -W --showformat='${Installed-Size}\t${Package}\t${Priority}\n' | sort -k1,1n
         sudo swapoff -a
         sudo rm -f /swapfile
         sudo apt-get update
