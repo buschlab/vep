@@ -14,7 +14,7 @@ jobs:
       run: |
         df -h
         # dpkg-query -W --showformat='${Installed-Size}\t${Package}\t${Priority}\n' | sort -k1,1n
-        sudo swapoff -a
+        # sudo swapoff -a
         sudo rm -f /swapfile
         sudo apt-get update
         sudo apt-get remove powershell google-chrome-stable google-cloud-sdk firefox dotnet-sdk-3.1 azure-cli
