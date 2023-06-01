@@ -6,7 +6,8 @@ on:
       - ".github/workflows/docker.109-GRCh38.yml"
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@master
     - name: Free disk space
@@ -32,7 +33,7 @@ jobs:
         df -h
     - name: Build and publish on Dockerhub
       uses: elgohr/Publish-Docker-Github-Action@v5
-      timeout-minutes: 400
+      timeout-minutes: 1400
       with:
         name: buschlab/vep
         username: ${{ secrets.DOCKER_USER }}
