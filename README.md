@@ -29,7 +29,9 @@ This documentation describes the usage of the Docker image at https://hub.docker
 **Human**
 
 [![106.1-GRCh38](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCh38.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCh38.yml) 
+
 [![106.1-GRCh37](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCh37.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.106-GRCh37.yml)
+
 [![109-GRCh38](https://github.com/buschlab/vep/actions/workflows/docker.109-GRCh38.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.109-GRCh38.yml)
 
 **Mouse**
