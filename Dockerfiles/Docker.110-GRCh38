@@ -2,7 +2,7 @@ FROM ensemblorg/ensembl-vep:release_110.1
 
 MAINTAINER Axel Künstner <axel.kuenstner@uni-luebeck.de>
 
-# Change user to root
+# Change user to root 
 USER root
 
 RUN apt-get update && apt-get install -y samtools
