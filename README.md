@@ -34,6 +34,8 @@ This documentation describes the usage of the Docker image at https://hub.docker
 
 [![109-GRCh38](https://github.com/buschlab/vep/actions/workflows/docker.109-GRCh38.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.109-GRCh38.yml)
 
+[![110-GRCh38](https://github.com/buschlab/vep/actions/workflows/docker.110-GRCh38.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.110-GRCh38.yml)
+
 **Mouse**
 
 [![102.0-GRCm38](https://github.com/buschlab/vep/actions/workflows/docker.102-GRCm38.yml/badge.svg)](https://github.com/buschlab/vep/actions/workflows/docker.102-GRCm38.yml) 
