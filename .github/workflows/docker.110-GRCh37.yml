@@ -1,4 +1,4 @@
-name: 106-GRCh37
+name: 110-GRCh37
 on:
   push:
     paths:
