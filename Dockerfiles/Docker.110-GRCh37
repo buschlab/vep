@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y samtools
 # Change user to vep
 USER vep
 
-RUN perl INSTALL.pl \
+RUN INSTALL.pl \
         --AUTO fcp \
         --NO_UPDATE \
         --ASSEMBLY GRCh37 \
