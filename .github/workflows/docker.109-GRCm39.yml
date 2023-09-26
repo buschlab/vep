@@ -6,8 +6,9 @@ on:
       - ".github/workflows/docker.109-GRCm39.yml"
 jobs:
   build:
+    # runs-on: ubuntu-latest
     runs-on: ubuntu-latest
-    steps:
+    steps: self-hosted
     - uses: actions/checkout@master
     - name: Free disk space
       run: |
