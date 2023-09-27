@@ -14,8 +14,8 @@ RUN INSTALL.pl \
         --AUTO fcp \
         --NO_UPDATE \
         --ASSEMBLY GRCh38 \
-        --PLUGINSDIR /opt/vep/.vep/Plugins/ \
-        --CACHEDIR /opt/vep/.vep/ \
+        --PLUGINSDIR /opt/vep/data/Plugins/ \
+        --CACHEDIR /opt/vep/data/ \
         --PLUGINS all \
         --SPECIES homo_sapiens && \
     vep -id rs699 \
