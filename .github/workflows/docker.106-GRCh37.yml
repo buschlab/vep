@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Free disk space
       run: |
-         df -h
+        df -h
         # dpkg-query -W --showformat='${Installed-Size}\t${Package}\t${Priority}\n' | sort -k1,1n
         # sudo swapoff -a
         sudo rm -f /swapfile
@@ -31,7 +31,7 @@ jobs:
         docker image ls -a
         docker container ls -a
         df -h
-    - name: Build and publish on Dockerhub
+      - name: Build and publish on Dockerhub
       uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: buschlab/vep
