@@ -12,15 +12,19 @@ jobs:
     - uses: actions/checkout@master
     - name: Free disk space
       run: |
-        df -h
-        dpkg-query -W --showformat='${Installed-Size}\t${Package}\t${Priority}\n' | sort -k1,1n
-        sudo swapoff -a
+         df -h
+        # dpkg-query -W --showformat='${Installed-Size}\t${Package}\t${Priority}\n' | sort -k1,1n
+        # sudo swapoff -a
         sudo rm -f /swapfile
-        sudo apt-get update
-        sudo apt-get remove powershell google-chrome-stable google-cloud-sdk firefox dotnet-sdk-3.1 hhvm azure-cli
-        sudo apt-get purge $(dpkg-query -Wf '${Package;-40}${Priority}\n' | awk '$2 ~ /extra/ { print $1 }')
-        sudo apt clean
-        sudo apt-get autoremove --purge
+        # sudo apt-get update
+        # sudo apt-get remove powershell google-chrome-stable google-cloud-sdk firefox dotnet-sdk-3.1 azure-cli
+        # sudo apt-get purge $(dpkg-query -Wf '${Package;-40}${Priority}\n' | awk '$2 ~ /extra/ { print $1 }')
+        # sudo apt clean
+        # sudo apt-get autoremove --purge
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /opt/ghc
+        sudo rm -rf "/usr/local/share/boost"
+        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
         docker image ls -a
         docker system prune -a -f --filter "label!=repository=https://github.com/elgohr/Publish-Docker-Github-Action"
         docker system prune -f
@@ -28,7 +32,7 @@ jobs:
         docker container ls -a
         df -h
     - name: Build and publish on Dockerhub
-      uses: elgohr/Publish-Docker-Github-Action@v4
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: buschlab/vep
         username: ${{ secrets.DOCKER_USER }}
